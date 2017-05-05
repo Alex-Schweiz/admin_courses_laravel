@@ -20,7 +20,7 @@
 								<li>
 									<!-- start message--><a href="#">
 										<div class="pull-left">
-											<!-- User Image--><img class="img-circle" src="img/user1-128x128.jpg" alt="User Image">
+											<!-- User Image--><img class="img-circle" src="/admin/img/user1-128x128.jpg" alt="User Image">
 										</div>
 										<!-- Message title and timestamp-->
 										<h4>Support Team<small><i class="fa fa-clock-o"></i> 5 mins</small></h4>
@@ -79,11 +79,11 @@
 				<!-- User Account Menu-->
 				<li class="dropdown user user-menu">
 					<!-- Menu Toggle Button--><a class="dropdown-toggle" href="#" data-toggle="dropdown">
-						<!-- The user image in the navbar--><img class="user-image" src="img/user1-128x128.jpg" alt="User Image">
+						<!-- The user image in the navbar--><img class="user-image" src="/admin/img/user1-128x128.jpg" alt="User Image">
 						<!-- hidden-xs hides the username on small devices so only the image appears.--><span class="hidden-xs">Alexander Pierce</span></a>
 					<ul class="dropdown-menu">
 						<!-- The user image in the menu-->
-						<li class="user-header"><img class="img-circle" src="img/user1-128x128.jpg" alt="User Image">
+						<li class="user-header"><img class="img-circle" src="/admin/img/user1-128x128.jpg" alt="User Image">
 							<p>Alexander Pierce - Web Developer<small>Member since Nov. 2012</small></p>
 						</li>
 						<!-- Menu Body-->

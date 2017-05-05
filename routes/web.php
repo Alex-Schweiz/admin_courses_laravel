@@ -17,3 +17,7 @@ Route::get('/', function () {
 
 Route::resource('admin/teachers', 'TeacherController');
 Route::resource('admin/current-groups', 'CurrentGroupsController');
+Route::resource('admin/dashboard', 'DashboardController');
+Route::resource('admin/payments-incoming', 'PaymentsIncomingController');
+Route::resource('admin/payments-outgoing', 'PaymentsOutgoingController');
+Route::resource('admin/knowledge-groups', 'KnowledgeGroupsController');

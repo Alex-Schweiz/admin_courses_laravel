@@ -13,7 +13,7 @@ class TeachersTableSeeder extends Seeder
      */
     public function run()
     {
-	    $quantity_clients = rand(25, 27);
+	    $quantity_clients = rand(15, 20);
 
 	    Teacher::truncate();
 

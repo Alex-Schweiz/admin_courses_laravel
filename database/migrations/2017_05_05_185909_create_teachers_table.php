@@ -22,6 +22,11 @@ class CreateTeachersTable extends Migration
 		    $table->string('phone');
 		    $table->string('address');
 		    $table->text('notes');
+		    $table->string('photo');
+		    $table->string('department');
+		    $table->string('occupation');
+		    $table->date('date_of_joining');
+		    $table->integer('salary');
 		    $table->timestamps();
 	    });
     }

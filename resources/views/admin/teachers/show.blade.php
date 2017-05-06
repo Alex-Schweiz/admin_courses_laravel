@@ -2,7 +2,7 @@
 @section('content')
 	<section class="content-header row">
 		<div class="col-md-3">
-			<h1>Single Teacher Page</h1>
+			<h1>{{$teacher->name}}</h1>
 		</div>
 		<div class="col-md-2 col-md-offset-7">
 			<button class="btn btn-primary edit-one" type="button" data-toggle="modal" data-target="#myModal"><a class="white-link" href="#"><i class="fa fa-pencil"></i> Edit teacher</a></button>
@@ -13,7 +13,7 @@
 					<div class="modal-content">
 						<div class="modal-header">
 							<button class="close" type="button" data-dismiss="modal">×</button>
-							<h3 class="modal-title">Edit Nina Mcintire info</h3>
+							<h3 class="modal-title">Edit {{$teacher->name}} info</h3>
 						</div>
 						<div class="modal-body">
 							<form>
@@ -79,9 +79,9 @@
 		<div class="row">
 			<div class="col-md-4">
 				<div class="box box-solid box-primary">
-					<div class="box-body box-profile"><img class="profile-user-img img-responsive img-circle" src="/admin/img/user1-128x128.jpg" alt="User profile picture">
-						<h3 class="profile-username text-center">Nina Mcintire</h3>
-						<p class="text-muted text-center">Software Engineer</p>
+					<div class="box-body box-profile"><img class="profile-user-img img-responsive img-circle" src="{{$teacher->photo}}" alt="User profile picture">
+						<h3 class="profile-username text-center">{{$teacher->name}}</h3>
+						<p class="text-muted text-center">{{$teacher->occupation}}</p>
 						<ul class="list-group list-group-unbordered">
 							<li class="list-group-item"><b>Groups</b><a class="pull-right">2</a></li>
 							<li class="list-group-item"><b>Students</b><a class="pull-right">25</a></li>
@@ -107,27 +107,27 @@
 						<table class="table table-bordered">
 							<tr>
 								<td>Name</td>
-								<td>Alicia Keys</td>
+								<td>{{$teacher->name}}</td>
 							</tr>
 							<tr>
 								<td>Date of birth</td>
-								<td>21/03/1992</td>
+								<td>{{$teacher->date_of_birth}}</td>
 							</tr>
 							<tr>
 								<td>Gender</td>
-								<td>Female</td>
+								<td>{{$teacher->sex}}</td>
 							</tr>
 							<tr>
 								<td>Email</td>
-								<td>sdasdad@mail.com</td>
+								<td>{{$teacher->email}}</td>
 							</tr>
 							<tr>
 								<td>Phone</td>
-								<td>+38-095-24-24</td>
+								<td>{{$teacher->phone}}</td>
 							</tr>
 							<tr>
 								<td>Address</td>
-								<td>21 Down Street, London</td>
+								<td>{{$teacher->address}}</td>
 							</tr>
 						</table>
 					</div>
@@ -140,23 +140,23 @@
 						<table class="table table-bordered">
 							<tr>
 								<td>Personal ID</td>
-								<td>001</td>
+								<td>{{$teacher->id}}</td>
 							</tr>
 							<tr>
 								<td>Department</td>
-								<td>Teachers</td>
+								<td>{{$teacher->department}}</td>
 							</tr>
 							<tr>
-								<td>Designation</td>
-								<td>Junior English teacher</td>
+								<td>Occupation</td>
+								<td>{{$teacher->occupation}}</td>
 							</tr>
 							<tr>
 								<td>Date of joining</td>
-								<td>15/01/2017</td>
+								<td>{{$teacher->date_of_joining}}</td>
 							</tr>
 							<tr>
 								<td>Salary</td>
-								<td>$150</td>
+								<td>$ {{$teacher->salary}}</td>
 							</tr>
 						</table>
 					</div>

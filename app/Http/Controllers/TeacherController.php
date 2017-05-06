@@ -14,7 +14,10 @@ class TeacherController extends Controller
      */
     public function index()
     {
-	    return view('admin.teachers.index');
+    	$teachers_number = Teacher::latest()->count();
+	    $teachers = Teacher::latest()->get();
+
+	    return view('admin.teachers.index', compact('teachers', 'teachers_number'));
     }
 
     /**
@@ -41,12 +44,11 @@ class TeacherController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Teacher $teacher)
     {
-	    return view('admin.teachers.show');
+	    return view('admin.teachers.show', compact('teacher'));
     }
 
     /**

@@ -33,5 +33,10 @@ $factory->define(App\Teacher::class, function(Faker\Generator $faker) {
 		'phone' => $faker->e164PhoneNumber,
 		'address' => $faker->streetAddress,
 		'notes' => $faker->paragraph(5),
+		'photo' => $faker->imageUrl($width = 640, $height = 640, 'people'),
+		'department' => 'Teachers',
+		'occupation' => $faker->randomElement($array = array ('Junior English Teacher','Middle English Teacher','Kids Teacher')),
+		'date_of_joining' => $faker->date($format = 'Y-m-d', $max = 'now'),
+		'salary' => $faker->numberBetween($min = 150, $max = 250)
 	];
 });

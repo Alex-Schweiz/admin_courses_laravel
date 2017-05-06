@@ -15,7 +15,7 @@ class TeacherController extends Controller
     public function index()
     {
     	$teachers_number = Teacher::latest()->count();
-	    $teachers = Teacher::latest()->get();
+	    $teachers = Teacher::oldest()->get();
 
 	    return view('admin.teachers.index', compact('teachers', 'teachers_number'));
     }
@@ -27,7 +27,7 @@ class TeacherController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.teachers.create');
     }
 
     /**
@@ -38,7 +38,15 @@ class TeacherController extends Controller
      */
     public function store(Request $request)
     {
-        //
+	    $this->validate(request(),[
+		    'name' => 'required|min:2',
+		    'salary' => 'required|min:2',
+	    ]);
+
+    	  Teacher::create(request(['name', 'date_of_birth', 'gender', 'email', 'phone', 'address',
+		      'notes', 'department', 'occupation', 'date_of_joining', 'salary']));
+
+        return redirect('/admin/teachers/');
     }
 
     /**

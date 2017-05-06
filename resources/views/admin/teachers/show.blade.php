@@ -115,7 +115,7 @@
 							</tr>
 							<tr>
 								<td>Gender</td>
-								<td>{{$teacher->sex}}</td>
+								<td>{{$teacher->gender}}</td>
 							</tr>
 							<tr>
 								<td>Email</td>
@@ -175,18 +175,14 @@
 								<th>Start date</th>
 								<th>Finish date</th>
 							</tr>
-							<tr>
-								<td>001</td>
-								<td>A1 Beginner</td>
-								<td>01/01/2017</td>
-								<td>01/05/2017</td>
-							</tr>
-							<tr>
-								<td>002</td>
-								<td>A2 Intensive</td>
-								<td>01/02/2017</td>
-								<td>01/06/2017</td>
-							</tr>
+							@foreach($teacher->current_groups as $group)
+								<tr>
+									<td>{{$group->id}}</td>
+									<td>{{$group->name}}</td>
+									<td>{{$group->start_date}}</td>
+									<td>{{$group->finish_date}}</td>
+								</tr>
+							@endforeach
 						</table>
 					</div>
 				</div>

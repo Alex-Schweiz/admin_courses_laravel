@@ -4,7 +4,7 @@
 		<div class="col-md-3">
 			<h1>Our teachers {{$teachers_number}}</h1>
 		</div>
-		<div class="col-md-2 col-md-offset-7"><a href="teacher-add-new.html" class="btn btn-primary add-new white-link"><i class="fa fa-plus"></i> Add new teacher</a></div>
+		<div class="col-md-2 col-md-offset-7"><a href="/admin/teachers/create" class="btn btn-primary add-new white-link"><i class="fa fa-plus"></i> Add new teacher</a></div>
 	</section>
 	<section class="content">
 		<div class="row">

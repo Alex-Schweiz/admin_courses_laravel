@@ -17,12 +17,12 @@ class CreateTeachersTable extends Migration
 		    $table->increments('id');
 		    $table->string('name');
 		    $table->date('date_of_birth');
-		    $table->boolean('sex');
+		    $table->boolean('gender');
 		    $table->string('email');
 		    $table->string('phone');
 		    $table->string('address');
 		    $table->text('notes');
-		    $table->string('photo');
+		    $table->string('photo')->default('http://lorempixel.com/640/640/people/');
 		    $table->string('department');
 		    $table->string('occupation');
 		    $table->date('date_of_joining');

@@ -45,8 +45,29 @@ $factory->define(App\CurrentGroups::class, function(Faker\Generator $faker) {
 
 	return [
 		'teacher_id' => $faker->randomElement($array = array ('1','2','3','4','5')),
-		'name' => $faker->randomElement($array = array ('A1 Beginner','A2','Speaking Club','B1 Intensive','B2')),
+		'group_name' => $faker->randomElement($array = array ('A1 Beginner','A2','Speaking Club','B1 Intensive','B2')),
+		'group_type' => $faker->randomElement($array = array ('Adult group','Kids group','Intensive course','Speaking club')),
+		'department' => $faker->randomElement($array = array ('English Language','German Language','French Language')),
 		'start_date' => $faker->randomElement($array = array ('2017-01-01','2017-02-01','2017-03-01','2017-04-01','2017-05-01')),
 		'finish_date' => $faker->randomElement($array = array ('2017-06-01','2017-07-01','2017-08-01','2017-09-01','2017-10-01'))
+	];
+});
+
+$factory->define(App\Awards::class, function(Faker\Generator $faker) {
+
+	return [
+		'teacher_id' => $faker->randomElement($array = array ('1','2','3','4','5')),
+		'name' => $faker->randomElement($array = array ('Teacher of the month','Best Teacher of the month','Amazing Teacher of the month','Miss teacher')),
+		'reward' => $faker->numberBetween($min = 50, $max = 100)
+	];
+});
+
+$factory->define(App\Students::class, function(Faker\Generator $faker) {
+
+	return [
+		'user_id' => $faker->randomElement($array = array ('1','2','3','4','5')),
+		'current_groups_id' => $faker->randomElement($array = array ('1','2','3','4','5')),
+		'name' => $faker->name,
+		'photo' => $faker->imageUrl($width = 640, $height = 640, 'people')
 	];
 });

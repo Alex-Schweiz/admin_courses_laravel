@@ -52,11 +52,14 @@ class TeacherController extends Controller
     /**
      * Display the specified resource.
      *
+     * @param \App\Teacher $teacher
      * @return \Illuminate\Http\Response
      */
     public function show(Teacher $teacher)
     {
-	    return view('admin.teachers.show', compact('teacher'));
+    	$own_groups = $teacher->current_groups()->count();
+	    $own_awards = $teacher->awards()->count();
+	    return view('admin.teachers.show', compact('teacher', 'own_groups', 'own_awards'));
     }
 
     /**

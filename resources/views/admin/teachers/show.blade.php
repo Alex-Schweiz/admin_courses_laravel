@@ -83,7 +83,8 @@
 						<h3 class="profile-username text-center">{{$teacher->name}}</h3>
 						<p class="text-muted text-center">{{$teacher->occupation}}</p>
 						<ul class="list-group list-group-unbordered">
-							<li class="list-group-item"><b>Groups</b><a class="pull-right">2</a></li>
+							<li class="list-group-item"><b>Awards</b><a class="pull-right">{{$own_awards}}</a></li>
+							<li class="list-group-item"><b>Groups</b><a class="pull-right">{{$own_groups}}</a></li>
 							<li class="list-group-item"><b>Students</b><a class="pull-right">25</a></li>
 							<li class="list-group-item"><b>Months working</b><a class="pull-right">2</a></li>
 						</ul>
@@ -193,17 +194,17 @@
 					<div class="box-body">
 						<table class="table table-bordered">
 							<tr>
+								<th>#</th>
 								<th>Name</th>
 								<th>Prise</th>
 							</tr>
-							<tr>
-								<td>Teacher of the month 04/2017</td>
-								<td>$50</td>
-							</tr>
-							<tr>
-								<td>Famous person</td>
-								<td>$40</td>
-							</tr>
+							@foreach($teacher->awards as $award)
+								<tr>
+									<td>{{$award->id}}</td>
+									<td>{{$award->name}}</td>
+									<td>{{$award->reward}}</td>
+								</tr>
+							@endforeach
 						</table>
 					</div>
 				</div>

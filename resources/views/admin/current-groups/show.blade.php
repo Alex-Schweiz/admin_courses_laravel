@@ -2,7 +2,7 @@
 @section('content')
 	<section class="content-header row">
 		<div class="col-md-3">
-			<h1>Current single group</h1>
+			<h1>{{$current_group->name}}  Info</h1>
 		</div>
 		<div class="col-md-2 col-md-offset-7">
 			<button class="btn btn-primary edit-one" type="button" data-toggle="modal" data-target="#groupModal"><a class="white-link" href="#"><i class="fa fa-pencil"></i> Edit a group</a></button>
@@ -63,18 +63,18 @@
 			<div class="col-md-6">
 				<div class="box box-solid box-primary">
 					<div class="box-header with-border">
-						<h4 class="box-title">A1 Beginner</h4>
+						<h4 class="box-title">{{$current_group->name}}</h4>
 					</div>
 					<div class="box-body">
 						<h3>Adult beginner group</h3>
 						<table class="table table-bordered">
 							<tr>
 								<td>Start date</td>
-								<td>01/01/2017</td>
+								<td>{{$current_group->start_date}}</td>
 							</tr>
 							<tr>
 								<td>End Date</td>
-								<td>01/05/2017</td>
+								<td>{{$current_group->finish_date}}</td>
 							</tr>
 							<tr>
 								<td>Average score</td>
@@ -101,16 +101,16 @@
 			</div>
 			<div class="col-md-6">
 				<div class="box box-widget widget-user">
-					<div class="widget-user-header bg-primary"><a class="white-link" href="teacher-single.html">
-							<h3 class="widget-user-username">Elma Wild</h3></a>
-						<h5 class="widget-user-desc">Junior English Teacher</h5>
+					<div class="widget-user-header bg-primary"><a class="white-link" href="/admin/teachers/{{$current_group->teacher->id}}">
+							<h3 class="widget-user-username">{{$current_group->teacher->name}}</h3></a>
+						<h5 class="widget-user-desc">{{$current_group->teacher->occupation}}</h5>
 					</div>
-					<div class="widget-user-image"><img class="img-circle" src="img/user1-128x128.jpg" alt="User Avatar"></div>
+					<div class="widget-user-image"><img class="img-circle" src="{{$current_group->teacher->photo}}" alt="User Avatar"></div>
 					<div class="box-footer">
 						<div class="row">
 							<div class="col-sm-4 border-right">
 								<div class="description-block">
-									<h5 class="description-header">2</h5><span class="description-text">Groups</span>
+									<h5 class="description-header">{{$current_group->teacher->current_groups()->count()}}</h5><span class="description-text">Groups</span>
 								</div>
 							</div>
 							<div class="col-sm-4 border-right">
@@ -129,20 +129,15 @@
 				<div class="box box-primary">
 					<div class="box-header with-border">
 						<h3 class="box-title">Course students</h3>
-						<div class="box-tools pull-right"><span class="label label-success">8 Students</span>
+						<div class="box-tools pull-right"><span class="label label-success">{{$current_group->students->count()}} Students</span>
 							<button class="btn btn-box-tool" type="button" data-widget="collapse"><i class="fa fa-minus"></i></button>
 						</div>
 					</div>
 					<div class="box-body no-padding">
 						<ul class="users-list clearfix">
-							<li><img src="/admin/img/user1-128x128.jpg" alt="User Image"><a class="users-list-name" href="#">Alexander Pierce</a></li>
-							<li><img src="/admin/img/user8-128x128.jpg" alt="User Image"><a class="users-list-name" href="#">Norman</a></li>
-							<li><img src="/admin/img/user7-128x128.jpg" alt="User Image"><a class="users-list-name" href="#">Jane</a></li>
-							<li><img src="/admin/img/user6-128x128.jpg" alt="User Image"><a class="users-list-name" href="#">John</a></li>
-							<li><img src="/admin/img/user2-160x160.jpg" alt="User Image"><a class="users-list-name" href="#">Alexander</a></li>
-							<li><img src="/admin/img/user5-128x128.jpg" alt="User Image"><a class="users-list-name" href="#">Sarah</a></li>
-							<li><img src="/admin/img/user4-128x128.jpg" alt="User Image"><a class="users-list-name" href="#">Nora</a></li>
-							<li><img src="/admin/img/user3-128x128.jpg" alt="User Image"><a class="users-list-name" href="#">Nadia</a></li>
+							@foreach($current_group->students as $student)
+								<li><img src="{{$student->photo}}" alt="User Image"><a class="users-list-name" href="#">{{$student->name}}</a></li>
+							@endforeach
 						</ul>
 					</div>
 					<div class="box-footer text-center"><a class="uppercase">View All Students</a></div>

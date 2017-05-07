@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\CurrentGroups;
 use Illuminate\Http\Request;
 
 class CurrentGroupsController extends Controller
@@ -13,7 +14,10 @@ class CurrentGroupsController extends Controller
      */
     public function index()
     {
-	    return view('admin.current-groups.index');
+    	$current_groups_number = CurrentGroups::all()->count();
+    	$current_groups = CurrentGroups::oldest()->get();
+
+	    return view('admin.current-groups.index', compact('current_groups','current_groups_number'));
     }
 
     /**
@@ -23,7 +27,7 @@ class CurrentGroupsController extends Controller
      */
     public function create()
     {
-        //
+	    return view('admin.current-groups.create');
     }
 
     /**
@@ -34,18 +38,24 @@ class CurrentGroupsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+	    $this->validate(request(),[
+		    'group_name' => 'required|min:2'
+	    ]);
+
+	    CurrentGroups::create(request(['group_name', 'group_type', 'department', 'start_date', 'finish_date']));
+
+	    return redirect('/admin/current-groups/');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\CurrentGroups $current_group
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(CurrentGroups $current_group)
     {
-        //
+        return view('admin.current-groups.show', compact('current_group'));
     }
 
     /**

@@ -59,7 +59,8 @@ $factory->define(App\Awards::class, function(Faker\Generator $faker) {
 	return [
 		'teacher_id' => $faker->randomElement($array = array ('1','2','3','4','5')),
 		'name' => $faker->randomElement($array = array ('Teacher of the month','Best Teacher of the month','Amazing Teacher of the month','Miss teacher')),
-		'reward' => $faker->numberBetween($min = 50, $max = 100)
+		'reward' => $faker->numberBetween($min = 50, $max = 100),
+		'date' => $faker->randomElement($array = array ('2017-01-01','2017-02-01','2017-03-01','2017-04-01','2017-05-01')),
 	];
 });
 

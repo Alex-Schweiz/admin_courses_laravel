@@ -10,6 +10,8 @@
 		</ul>
 	</li>
 	<li><a href="/admin/teachers/"><i class="fa fa-users"></i><span>Teachers</span></a></li>
+	<li><a href="/admin/students/"><i class="fa fa-graduation-cap"></i><span>Students</span></a></li>
+	<li><a href="/admin/awards/"><i class="fa fa-trophy"></i><span>Awards</span></a></li>
 	<li><a href="login.html"><i class="fa fa-user"></i><span>Login page</span></a></li>
 	<li class="treeview"><a href="#"><i class="fa fa-money"></i><span>Payments</span><span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
 		<ul class="treeview-menu">

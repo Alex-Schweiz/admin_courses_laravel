@@ -21,3 +21,5 @@ Route::resource('admin/dashboard', 'DashboardController');
 Route::resource('admin/payments-incoming', 'PaymentsIncomingController');
 Route::resource('admin/payments-outgoing', 'PaymentsOutgoingController');
 Route::resource('admin/knowledge-groups', 'KnowledgeGroupsController');
+Route::resource('admin/awards', 'AwardsController');
+Route::resource('admin/students', 'StudentsController');

@@ -18,6 +18,7 @@ class CreateAwardsModelsTable extends Migration
             $table->integer('teacher_id');
             $table->string('name');
 	          $table->integer('reward');
+	          $table->date('date');
             $table->timestamps();
         });
     }

@@ -3,7 +3,12 @@
 	<li class="header">HEADER</li>
 	<!-- Optionally, you can add icons to the links-->
 	<li><a href="/admin/dashboard/"><i class="fa fa-tachometer"></i><span>Dashboard</span></a></li>
-	<li><a href="/admin/current-groups/"><i class="fa fa-graduation-cap"></i><span>Current groups</span></a></li>
+	<li class="treeview"><a href="#"><i class="fa fa-money"></i><span>Groups</span><span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+		<ul class="treeview-menu">
+			<li><a href="/admin/current-groups/"><i class="fa fa-graduation-cap"></i><span>Current groups</span></a></li>
+			<li><a href="/admin/current-groups/"><i class="fa fa-archive"></i><span>Archived groups</span></a></li>
+		</ul>
+	</li>
 	<li><a href="/admin/teachers/"><i class="fa fa-users"></i><span>Teachers</span></a></li>
 	<li><a href="login.html"><i class="fa fa-user"></i><span>Login page</span></a></li>
 	<li class="treeview"><a href="#"><i class="fa fa-money"></i><span>Payments</span><span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>

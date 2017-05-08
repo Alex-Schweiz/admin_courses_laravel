@@ -14,8 +14,8 @@ class TeacherController extends Controller
      */
     public function index()
     {
-    	$teachers_number = Teacher::latest()->count();
-	    $teachers = Teacher::oldest()->get();
+    	$teachers_number = Teacher::where('fired','0')->count();
+	    $teachers = Teacher::where('fired','0')->get();
 
 	    return view('admin.teachers.index', compact('teachers', 'teachers_number'));
     }

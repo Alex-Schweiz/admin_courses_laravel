@@ -11,9 +11,14 @@
 			@foreach($current_groups as $current_group)
 				<div class="col-md-4">
 					<div class="box box-widget widget-user-2">
-						<div class="widget-user-header bg-blue"><a class="white-link" href="/admin/current-groups/{{$current_group->id}}">
-								<h3 class="widget-user-username">{{$current_group->name}}</h3></a>
-							<h5 class="widget-user-desc">Adult beginner group</h5>
+						<div class="widget-user-header bg-blue">
+							<div class="row">
+								<div class="col-md-1">
+									<h2 class="group-level-header">{{$current_group->group_level}}</h2>
+								</div>
+								<div class="col-md-10"><a class="white-link" href="/admin/current-groups/{{$current_group->id}}">
+										<h3 class="widget-user-username">{{$current_group->group_type}}</h3></a></div>
+							</div>
 						</div>
 						<div class="box-footer no-padding">
 							<ul class="nav nav-stacked">

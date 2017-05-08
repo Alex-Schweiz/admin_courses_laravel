@@ -9,7 +9,7 @@
 <!-- Theme style-->
 <link rel="stylesheet" href="/admin/css/AdminLTE.css">
 <!-- Custom style-->
-<link rel="stylesheet" href="/admin/css/custom.css">
+<link rel="stylesheet" href="/css/custom.css">
 <!--
 AdminLTE Skins. We have chosen the skin-blue for this starter
 page. However, you can choose any other skin. Make sure you

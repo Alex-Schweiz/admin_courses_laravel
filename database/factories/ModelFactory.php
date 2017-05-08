@@ -37,7 +37,8 @@ $factory->define(App\Teacher::class, function(Faker\Generator $faker) {
 		'department' => 'Teachers',
 		'occupation' => $faker->randomElement($array = array ('Junior English Teacher','Middle English Teacher','Kids Teacher')),
 		'date_of_joining' => $faker->date($format = 'Y-m-d', $max = 'now'),
-		'salary' => $faker->numberBetween($min = 150, $max = 250)
+		'salary' => $faker->numberBetween($min = 150, $max = 250),
+		'fired' => $faker->boolean,
 	];
 });
 
@@ -45,7 +46,7 @@ $factory->define(App\CurrentGroups::class, function(Faker\Generator $faker) {
 
 	return [
 		'teacher_id' => $faker->randomElement($array = array ('1','2','3','4','5')),
-		'group_name' => $faker->randomElement($array = array ('A1 Beginner','A2','Speaking Club','B1 Intensive','B2')),
+		'group_level' => $faker->randomElement($array = array ('A1','A2','B1','B2','C1')),
 		'group_type' => $faker->randomElement($array = array ('Adult group','Kids group','Intensive course','Speaking club')),
 		'department' => $faker->randomElement($array = array ('English Language','German Language','French Language')),
 		'start_date' => $faker->randomElement($array = array ('2017-01-01','2017-02-01','2017-03-01','2017-04-01','2017-05-01')),

@@ -60,7 +60,7 @@
 	</section>
 	<section class="content">
 		<div class="row">
-			<div class="col-md-6">
+			<div class="col-md-4">
 				<div class="box box-solid box-primary">
 					<div class="box-header with-border">
 						<h4 class="box-title">{{$current_group->name}}</h4>
@@ -83,23 +83,6 @@
 						</table>
 					</div>
 				</div>
-				<!-- Line CHART-->
-				<div class="box box-info">
-					<div class="box-header with-border">
-						<h3 class="box-title">Line Chart</h3>
-						<div class="box-tools pull-right">
-							<button class="btn btn-box-tool" type="button" data-widget="collapse"><i class="fa fa-minus"></i></button>
-						</div>
-					</div>
-					<div class="box-body">
-						<div class="chart">
-							<p>Chart is coming soon</p>
-							<canvas id="lineCharts" style="height:250px;"></canvas>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-6">
 				<div class="box box-widget widget-user">
 					<div class="widget-user-header bg-primary"><a class="white-link" href="/admin/teachers/{{$current_group->teacher->id}}">
 							<h3 class="widget-user-username">{{$current_group->teacher->name}}</h3></a>
@@ -126,21 +109,188 @@
 						</div>
 					</div>
 				</div>
-				<div class="box box-primary">
-					<div class="box-header with-border">
-						<h3 class="box-title">Course students</h3>
-						<div class="box-tools pull-right"><span class="label label-success">{{$current_group->students->count()}} Students</span>
-							<button class="btn btn-box-tool" type="button" data-widget="collapse"><i class="fa fa-minus"></i></button>
+			</div>
+			<div class="col-md-8">
+				<div class="nav-tabs-custom">
+					<ul class="nav nav-tabs">
+						<li class="active"><a href="#progress" data-toggle="tab">Progress</a></li>
+						<li><a href="#students" data-toggle="tab">Students</a></li>
+						<li><a href="#homework" data-toggle="tab">Homework</a></li>
+						<li><a href="#classroom-tasks" data-toggle="tab">Classroom Tasks</a></li>
+						<li><a href="#results-table" data-toggle="tab">Results table</a></li>
+					</ul>
+					<div class="tab-content">
+						<div class="active tab-pane" id="progress">
+							<div class="box box-info">
+								<div class="box-header with-border">
+									<h3 class="box-title">Line Chart</h3>
+									<div class="box-tools pull-right">
+										<button class="btn btn-box-tool" type="button" data-widget="collapse"><i class="fa fa-minus"></i></button>
+									</div>
+								</div>
+								<div class="box-body">
+									<div class="chart">
+										<canvas id="lineChart" style="height:250px;"></canvas>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane" id="students">
+							<div class="box box-primary">
+								<div class="box-header with-border">
+									<h3 class="box-title">Course students</h3>
+									<div class="box-tools pull-right"><span class="label label-success">{{$current_group->students->count()}} Students</span>
+										<button class="btn btn-box-tool" type="button" data-widget="collapse"><i class="fa fa-minus"></i></button>
+									</div>
+								</div>
+								<div class="box-body no-padding">
+									<ul class="users-list clearfix">
+										@foreach($current_group->students as $student)
+											<li><img src="{{$student->photo}}" alt="User Image"><a class="users-list-name" href="#">{{$student->name}}</a></li>
+										@endforeach
+									</ul>
+								</div>
+								<div class="box-footer text-center"><a class="uppercase">View All Students</a></div>
+							</div>
+						</div>
+						<div class="tab-pane" id="homework">
+							<table class="table table-bordered">
+								<tr>
+									<th>#</th>
+									<th>Date</th>
+									<th>Task</th>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>20/01</td>
+									<td>Lorem ipsum dolor sit amet, consectetur adipiscing elit</td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td>21/01</td>
+									<td>Lorem ipsum dolor sit amet, consectetur adipiscing elit</td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td>22/01</td>
+									<td>Lorem ipsum dolor sit amet, consectetur adipiscing elit</td>
+								</tr>
+								<tr>
+									<td>4</td>
+									<td>23/01</td>
+									<td>Lorem ipsum dolor sit amet, consectetur adipiscing elit</td>
+								</tr>
+								<tr>
+									<td>5</td>
+									<td>24/01</td>
+									<td>Lorem ipsum dolor sit amet, consectetur adipiscing elit</td>
+								</tr>
+								<tr>
+									<td>6</td>
+									<td>29/01</td>
+									<td>Lorem ipsum dolor sit amet, consectetur adipiscing elit</td>
+								</tr>
+								<tr>
+									<td>7</td>
+									<td>02/02</td>
+									<td>Lorem ipsum dolor sit amet, consectetur adipiscing elit</td>
+								</tr>
+							</table>
+						</div>
+						<div class="tab-pane" id="classroom-tasks">
+							<table class="table table-bordered">
+								<tr>
+									<th>#</th>
+									<th>Date</th>
+									<th>Task</th>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>20/01</td>
+									<td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td>21/01</td>
+									<td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td>22/01</td>
+									<td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</td>
+								</tr>
+								<tr>
+									<td>4</td>
+									<td>23/01</td>
+									<td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</td>
+								</tr>
+								<tr>
+									<td>5</td>
+									<td>24/01</td>
+									<td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</td>
+								</tr>
+								<tr>
+									<td>6</td>
+									<td>29/01</td>
+									<td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</td>
+								</tr>
+								<tr>
+									<td>7</td>
+									<td>02/02</td>
+									<td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</td>
+								</tr>
+							</table>
+						</div>
+						<div class="tab-pane" id="results-table">
+							<table class="table table-striped">
+								<tr>
+									<th>Name</th>
+									<th>1</th>
+									<th>2</th>
+									<th>3</th>
+									<th>4</th>
+									<th>5</th>
+									<th>6</th>
+									<th>7</th>
+									<th>8</th>
+									<th>9</th>
+									<th>10</th>
+									<th>Exam</th>
+									<th>AVG</th>
+								</tr>
+								<tr>
+									<td>Eddie Murphy</td>
+									<td>70</td>
+									<td>75</td>
+									<td>35</td>
+									<td>15</td>
+									<td>15</td>
+									<td>80</td>
+									<td>80</td>
+									<td>80</td>
+									<td>80</td>
+									<td>80</td>
+									<td>80</td>
+									<td>73.8</td>
+								</tr>
+								<tr>
+									<td>Eddie Murphy</td>
+									<td>70</td>
+									<td>75</td>
+									<td>35</td>
+									<td>15</td>
+									<td>15</td>
+									<td>80</td>
+									<td>80</td>
+									<td>80</td>
+									<td>80</td>
+									<td>80</td>
+									<td>80</td>
+									<td>73.8</td>
+								</tr>
+							</table>
 						</div>
 					</div>
-					<div class="box-body no-padding">
-						<ul class="users-list clearfix">
-							@foreach($current_group->students as $student)
-								<li><img src="{{$student->photo}}" alt="User Image"><a class="users-list-name" href="#">{{$student->name}}</a></li>
-							@endforeach
-						</ul>
-					</div>
-					<div class="box-footer text-center"><a class="uppercase">View All Students</a></div>
 				</div>
 			</div>
 		</div>

@@ -16,7 +16,7 @@ class CreateCurrentGroupsTable extends Migration
         Schema::create('current_groups', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('teacher_id')->default('1');
-	          $table->string('group_name');
+	          $table->string('group_level');
 	          $table->string('group_type');
 	          $table->string('department');
 	          $table->date('start_date');

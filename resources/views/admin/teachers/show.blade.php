@@ -179,7 +179,9 @@
 							@foreach($teacher->current_groups as $group)
 								<tr>
 									<td>{{$group->id}}</td>
-									<td>{{$group->name}}</td>
+									<td>
+										<a href="/admin/current-groups/{{$group->id}}">{{$group->group_level}} {{$group->group_type}}</a>
+									</td>
 									<td>{{$group->start_date}}</td>
 									<td>{{$group->finish_date}}</td>
 								</tr>

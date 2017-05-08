@@ -27,6 +27,7 @@ class CreateTeachersTable extends Migration
 		    $table->string('occupation');
 		    $table->date('date_of_joining');
 		    $table->integer('salary');
+		    $table->boolean('fired')->default('0');
 		    $table->timestamps();
 	    });
     }

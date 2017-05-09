@@ -19,6 +19,12 @@ class CreateStudentsTable extends Migration
             $table->integer('current_groups_id');
             $table->string('name');
 	          $table->string('photo');
+	          $table->date('date_of_birth');
+	          $table->boolean('gender');
+	          $table->string('email');
+	          $table->string('phone');
+	          $table->string('address');
+	          $table->text('notes');
             $table->timestamps();
         });
     }

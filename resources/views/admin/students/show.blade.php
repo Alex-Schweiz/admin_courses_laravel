@@ -2,7 +2,7 @@
 @section('content')
 	<section class="content-header row">
 		<div class="col-md-3">
-			<h3>Single Student Page</h3>
+			<h3>{{$student->name}}</h3>
 		</div>
 		<div class="col-md-2 col-md-offset-7">
 			<button class="btn btn-primary edit-one" type="button" data-toggle="modal" data-target="#myModal"><a class="white-link" href="#"><i class="fa fa-pencil"></i> Edit student</a></button>
@@ -13,8 +13,8 @@
 			<div class="col-md-3">
 				<!-- Profile Image-->
 				<div class="box box-primary">
-					<div class="box-body box-profile"><img class="profile-user-img img-responsive img-circle" src="/admin/img/user4-128x128.jpg" alt="User profile picture">
-						<h3 class="profile-username text-center">Nina Mcintire</h3>
+					<div class="box-body box-profile"><img class="profile-user-img img-responsive img-circle" src="{{$student->photo}}" alt="User profile picture">
+						<h3 class="profile-username text-center">{{$student->name}}</h3>
 						<p class="text-muted text-center">A1 Kids group</p>
 						<ul class="list-group list-group-unbordered">
 							<li class="list-group-item"><b>Followers</b><a class="pull-right">12</a></li>
@@ -29,27 +29,27 @@
 						<table class="table table-bordered">
 							<tr>
 								<td>Date of birth</td>
-								<td>21/03/1992</td>
+								<td>{{$student->date_of_birth}}</td>
 							</tr>
 							<tr>
 								<td>Gender</td>
-								<td>Female</td>
+								<td>{{$student->gender}}</td>
 							</tr>
 							<tr>
 								<td>Email</td>
-								<td>sdasdad@mail.com</td>
+								<td>{{$student->email}}</td>
 							</tr>
 							<tr>
 								<td>Phone</td>
-								<td>+38-095-24-24</td>
+								<td>{{$student->phone}}</td>
 							</tr>
 							<tr>
 								<td>Address</td>
-								<td>21 Down Street, London</td>
+								<td>{{$student->address}}</td>
 							</tr>
 						</table>
 						<hr><strong><i class="fa fa-file-text-o margin-r-5"></i> Notes</strong>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
+						<p>{{$student->notes}}</p>
 					</div>
 				</div>
 			</div>
@@ -59,6 +59,7 @@
 						<li class="active"><a href="#progress" data-toggle="tab">Progress</a></li>
 						<li><a href="#timeline" data-toggle="tab">Timeline</a></li>
 						<li><a href="#homework" data-toggle="tab">Homework</a></li>
+						<li><a href="#scores" data-toggle="tab">Scores</a></li>
 					</ul>
 					<div class="tab-content">
 						<div class="active tab-pane" id="progress">
@@ -113,7 +114,6 @@
 								<li><i class="fa fa-clock-o bg-gray"></i></li>
 							</ul>
 						</div>
-						<!-- /.tab-pane-->
 						<div class="tab-pane" id="homework">
 							<div class="box">
 								<div class="box-header">
@@ -134,9 +134,8 @@
 											<!-- drag handle--><span class="handle"><i class="fa fa-ellipsis-v"></i><i class="fa fa-ellipsis-v"></i></span>
 											<!-- checkbox-->
 											<input type="checkbox" value="">
-											<!-- todo text--><span class="text">Design a nice theme</span>
-											<!-- Emphasis label--><small class="label label-danger"><i class="fa fa-clock-o"></i> 2 mins</small>
-											<!-- General tools such as edit or delete-->
+											<span class="text">Design a nice theme</span>
+											<small class="label label-danger"><i class="fa fa-clock-o"></i> 2 mins</small>
 											<div class="tools"><i class="fa fa-edit"></i><i class="fa fa-trash-o"></i></div>
 										</li>
 										<li><span class="handle"><i class="fa fa-ellipsis-v"></i><i class="fa fa-ellipsis-v"></i></span>
@@ -164,6 +163,26 @@
 								<!-- /.box-body-->
 								<div class="box-footer clearfix no-border">
 									<button class="btn btn-default pull-right" type="button"><i class="fa fa-plus"></i> Add item</button>
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane" id="scores">
+							<div class="box">
+								<div class="box-header">
+								</div>
+								<div class="box-body">
+									<table class="table table-bordered">
+										<tr>
+											<th>#</th>
+											<th>Score</th>
+										</tr>
+										@foreach($student->scores as $score)
+											<tr>
+												<td>{{$score->id}}</td>
+												<td>{{$score->score}}</td>
+											</tr>
+										@endforeach
+									</table>
 								</div>
 							</div>
 						</div>

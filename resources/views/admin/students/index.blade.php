@@ -30,7 +30,7 @@
 							@foreach($students as $student)
 								<tr>
 									<td>{{$student->id}}</td>
-									<td><a href="students-single.html">
+									<td><a href="/admin/students/{{$student->id}}">
 											<p>{{$student->name}}</p></a></td>
 									<td>A2 Beginner</td>
 									<td>English</td>

@@ -46,9 +46,10 @@ class StudentsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Students $students)
+    public function show(Students $student)
     {
-        return view('admin.students.show', compact('students'));
+      //return $student->scores;
+    	return view('admin.students.show', compact('student'));
     }
 
     /**

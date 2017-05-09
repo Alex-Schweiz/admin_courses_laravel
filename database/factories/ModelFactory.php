@@ -32,7 +32,7 @@ $factory->define(App\Teacher::class, function(Faker\Generator $faker) {
 		'email' => $faker->email,
 		'phone' => $faker->e164PhoneNumber,
 		'address' => $faker->streetAddress,
-		'notes' => $faker->paragraph(5),
+		'notes' => $faker->paragraph(3),
 		'photo' => $faker->imageUrl($width = 640, $height = 640, 'people'),
 		'department' => 'Teachers',
 		'occupation' => $faker->randomElement($array = array ('Junior English Teacher','Middle English Teacher','Kids Teacher')),
@@ -70,7 +70,13 @@ $factory->define(App\Students::class, function(Faker\Generator $faker) {
 		'user_id' => $faker->randomElement($array = array ('1','2','3','4','5')),
 		'current_groups_id' => $faker->randomElement($array = array ('1','2','3','4','5')),
 		'name' => $faker->name,
-		'photo' => $faker->imageUrl($width = 640, $height = 640, 'people')
+		'photo' => $faker->imageUrl($width = 640, $height = 640, 'people'),
+		'date_of_birth' => $faker->date($format = 'Y-m-d', $max = 'now'),
+		'gender' => $faker->boolean,
+		'email' => $faker->email,
+		'phone' => $faker->e164PhoneNumber,
+		'address' => $faker->streetAddress,
+		'notes' => $faker->paragraph(3),
 	];
 });
 
@@ -95,7 +101,7 @@ $factory->define(App\CurrentGroupTasks::class, function(Faker\Generator $faker) 
 $factory->define(App\StudentScores::class, function(Faker\Generator $faker) {
 
 	return [
-		'student_id' => $faker->randomElement($array = array ('1','2','3','4','5')),
+		'students_id' => $faker->randomElement($array = array ('1','2','3','4','5')),
 		'score' => $faker->numberBetween($min = 50, $max = 100),
 	];
 });

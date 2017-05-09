@@ -15,7 +15,7 @@ class CreateStudentScoresTable extends Migration
     {
         Schema::create('student_scores', function (Blueprint $table) {
             $table->increments('id');
-	          $table->integer('student_id');
+	          $table->integer('students_id');
 	          $table->integer('score');
             $table->timestamps();
         });

@@ -49,7 +49,10 @@ class StudentsController extends Controller
     public function show(Students $student)
     {
       //return $student->scores;
-    	return view('admin.students.show', compact('student'));
+    	//return view('admin.students.show', compact('student'));
+	    return view('admin.students.show', compact('student'))
+		    ->with('id', $student->scores->pluck('id'))
+		    ->with('score', $student->scores->pluck('score'));
     }
 
     /**

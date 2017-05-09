@@ -173,8 +173,8 @@
 								<div class="box-body">
 									<table class="table table-bordered">
 										<tr>
-											<th>#</th>
-											<th>Score</th>
+											<th># <span style="display: none" class="hiddenData" id="labelData">{{$id}}</span></th>
+											<th>Score <span style="display: none" class="hiddenData" id="dataSetData">{{$score}}</span></th>
 										</tr>
 										@foreach($student->scores as $score)
 											<tr>
@@ -192,5 +192,3 @@
 		</div>
 	</section>
 @endsection
-
-

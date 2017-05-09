@@ -8,18 +8,26 @@ $(function () {
 // This will get the first returned node in the jQuery collection.
 //var areaChart = new Chart(areaChartCanvas);
 
+    //Get data for labels
+    var labelData = document.getElementById('labelData').innerHTML;
+    var resLabelData = JSON.parse(labelData);
+
+    //Get raw Data
+    var dataSetData = document.getElementById('dataSetData').innerHTML;
+    var resdataSetData = JSON.parse(dataSetData);
+
     var areaChartData = {
-        labels: ["January", "February", "March", "April", "May", "June", "July"],
+        labels: resLabelData,
         datasets: [
             {
-                label: "Average score",
+                label: "Digital Goods",
                 fillColor: "rgba(60,141,188,0.9)",
                 strokeColor: "rgba(60,141,188,0.8)",
                 pointColor: "#3b8bba",
                 pointStrokeColor: "rgba(60,141,188,1)",
                 pointHighlightFill: "#fff",
                 pointHighlightStroke: "rgba(60,141,188,1)",
-                data: [60, 48, 65, 78, 82, 27, 90]
+                data: resdataSetData
             }
         ]
     };

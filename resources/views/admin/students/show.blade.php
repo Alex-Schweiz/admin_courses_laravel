@@ -56,12 +56,27 @@
 			<div class="col-md-9">
 				<div class="nav-tabs-custom">
 					<ul class="nav nav-tabs">
-						<li class="active"><a href="#timeline" data-toggle="tab">Timeline</a></li>
+						<li class="active"><a href="#progress" data-toggle="tab">Progress</a></li>
+						<li><a href="#timeline" data-toggle="tab">Timeline</a></li>
 						<li><a href="#homework" data-toggle="tab">Homework</a></li>
-						<li><a href="#progress" data-toggle="tab">Progress</a></li>
 					</ul>
 					<div class="tab-content">
-						<div class="active tab-pane" id="timeline">
+						<div class="active tab-pane" id="progress">
+							<div class="box box-info">
+								<div class="box-header with-border">
+									<h3 class="box-title">Line Chart</h3>
+									<div class="box-tools pull-right">
+										<button class="btn btn-box-tool" type="button" data-widget="collapse"><i class="fa fa-minus"></i></button>
+									</div>
+								</div>
+								<div class="box-body">
+									<div class="chart">
+										<canvas id="lineChart" style="height:350px;"></canvas>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane" id="timeline">
 							<ul class="timeline timeline-inverse">
 								<li class="time-label"><span class="bg-red">10 Feb. 2014</span></li>
 								<li><i class="fa fa-user bg-aqua"></i>

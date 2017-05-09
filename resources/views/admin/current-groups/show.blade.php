@@ -2,7 +2,7 @@
 @section('content')
 	<section class="content-header row">
 		<div class="col-md-3">
-			<h1>{{$current_group->name}}  Info</h1>
+			<h1>{{$current_group->group_type}}</h1>
 		</div>
 		<div class="col-md-2 col-md-offset-7">
 			<button class="btn btn-primary edit-one" type="button" data-toggle="modal" data-target="#groupModal"><a class="white-link" href="#"><i class="fa fa-pencil"></i> Edit a group</a></button>
@@ -63,7 +63,7 @@
 			<div class="col-md-4">
 				<div class="box box-solid box-primary">
 					<div class="box-header with-border">
-						<h4 class="box-title">{{$current_group->name}}</h4>
+						<h4 class="box-title">{{$current_group->group_level}}  {{$current_group->group_type}}</h4>
 					</div>
 					<div class="box-body">
 						<h3>Adult beginner group</h3>
@@ -83,6 +83,7 @@
 						</table>
 					</div>
 				</div>
+				<h2>Group teacher</h2>
 				<div class="box box-widget widget-user">
 					<div class="widget-user-header bg-primary"><a class="white-link" href="/admin/teachers/{{$current_group->teacher->id}}">
 							<h3 class="widget-user-username">{{$current_group->teacher->name}}</h3></a>
@@ -130,7 +131,7 @@
 								</div>
 								<div class="box-body">
 									<div class="chart">
-										<canvas id="lineChart" style="height:250px;"></canvas>
+										<canvas id="lineChart" style="height:300px;"></canvas>
 									</div>
 								</div>
 							</div>
@@ -146,7 +147,7 @@
 								<div class="box-body no-padding">
 									<ul class="users-list clearfix">
 										@foreach($current_group->students as $student)
-											<li><img src="{{$student->photo}}" alt="User Image"><a class="users-list-name" href="#">{{$student->name}}</a></li>
+											<li><img src="{{$student->photo}}" alt="User Image"><a class="users-list-name" href="/admin/students/{{$student->id}}">{{$student->name}}</a></li>
 										@endforeach
 									</ul>
 								</div>

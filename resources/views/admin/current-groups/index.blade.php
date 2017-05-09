@@ -2,7 +2,7 @@
 @section('content')
 	<section class="content-header row">
 		<div class="col-md-3">
-			<h1>Current groups</h1>
+			<h3>Current single group</h3>
 		</div>
 		<div class="col-md-2 col-md-offset-7"><a class="btn btn-primary add-new white-link" href="/admin/current-groups/create"><i class="fa fa-plus"></i> Add new group</a></div>
 	</section>

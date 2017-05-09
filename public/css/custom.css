@@ -28,3 +28,8 @@
     font-size: 60px;
     margin-top: 0;
 }
+
+li img {
+    width: 128px;
+    height: 128px;
+}

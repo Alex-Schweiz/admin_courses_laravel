@@ -10,17 +10,38 @@
 	</section>
 	<section class="content">
 		<div class="row">
-			@foreach($students as $student)
-				<div class="col-md-3">
-					<div class="box box-widget widget-user-2">
-						<div class="widget-user-header bg-blue">
-							<div class="widget-user-image"><img class="img-circle" src="{{$student->photo}}" alt="User Avatar"></div><a class="white-link" href="/admin/students/{{$student->id}}">
-								<h3 class="widget-user-username">{{$student->name}}</h3></a>
-							<h5 class="widget-user-desc">{{$student->current_group}} {{$student->current_group}}</h5>
-						</div>
+			<div class="col-md-12">
+				<div class="box box-solid box-primary">
+					<div class="box-header">
+						<h3 class="box-title">Students list</h3>
+					</div>
+					<div class="box-body">
+						<table class="table table-bordered table-striped" id="students_list">
+							<thead>
+							<tr>
+								<th>Student id</th>
+								<th>Name</th>
+								<th>Group</th>
+								<th>Department</th>
+								<th>Date of join</th>
+							</tr>
+							</thead>
+							<tbody>
+							@foreach($students as $student)
+								<tr>
+									<td>{{$student->id}}</td>
+									<td><a href="students-single.html">
+											<p>{{$student->name}}</p></a></td>
+									<td>A2 Beginner</td>
+									<td>English</td>
+									<td>12/04/2017</td>
+								</tr>
+							@endforeach
+							</tbody>
+						</table>
 					</div>
 				</div>
-			@endforeach
+			</div>
 		</div>
 	</section>
 @endsection

@@ -73,3 +73,29 @@ $factory->define(App\Students::class, function(Faker\Generator $faker) {
 		'photo' => $faker->imageUrl($width = 640, $height = 640, 'people')
 	];
 });
+
+$factory->define(App\CurrentHomework::class, function(Faker\Generator $faker) {
+
+	return [
+		'current_groups_id' => $faker->randomElement($array = array ('1','2','3','4','5','6','7','8','9','10','11')),
+		'task' => $faker->randomElement($array = array ('LP p.27 ex.1','LP p.31 ex.2','LP p.43 ex.1','LP p.40 ex.1','LP p.42 ex.2')),
+		'due_date' => $faker->randomElement($array = array ('2017-01-01','2017-02-01','2017-03-01','2017-04-01','2017-05-01')),
+	];
+});
+
+$factory->define(App\CurrentGroupTasks::class, function(Faker\Generator $faker) {
+
+	return [
+		'current_groups_id' => $faker->randomElement($array = array ('1','2','3','4','5','6','7','8','9','10','11')),
+		'task' => $faker->paragraph(1),
+		'due_date' => $faker->randomElement($array = array ('2017-01-01','2017-02-01','2017-03-01','2017-04-01','2017-05-01')),
+	];
+});
+
+$factory->define(App\StudentScores::class, function(Faker\Generator $faker) {
+
+	return [
+		'student_id' => $faker->randomElement($array = array ('1','2','3','4','5')),
+		'score' => $faker->numberBetween($min = 50, $max = 100),
+	];
+});

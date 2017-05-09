@@ -158,44 +158,16 @@
 							<table class="table table-bordered">
 								<tr>
 									<th>#</th>
-									<th>Date</th>
+									<th>Due date</th>
 									<th>Task</th>
 								</tr>
-								<tr>
-									<td>1</td>
-									<td>20/01</td>
-									<td>Lorem ipsum dolor sit amet, consectetur adipiscing elit</td>
-								</tr>
-								<tr>
-									<td>2</td>
-									<td>21/01</td>
-									<td>Lorem ipsum dolor sit amet, consectetur adipiscing elit</td>
-								</tr>
-								<tr>
-									<td>3</td>
-									<td>22/01</td>
-									<td>Lorem ipsum dolor sit amet, consectetur adipiscing elit</td>
-								</tr>
-								<tr>
-									<td>4</td>
-									<td>23/01</td>
-									<td>Lorem ipsum dolor sit amet, consectetur adipiscing elit</td>
-								</tr>
-								<tr>
-									<td>5</td>
-									<td>24/01</td>
-									<td>Lorem ipsum dolor sit amet, consectetur adipiscing elit</td>
-								</tr>
-								<tr>
-									<td>6</td>
-									<td>29/01</td>
-									<td>Lorem ipsum dolor sit amet, consectetur adipiscing elit</td>
-								</tr>
-								<tr>
-									<td>7</td>
-									<td>02/02</td>
-									<td>Lorem ipsum dolor sit amet, consectetur adipiscing elit</td>
-								</tr>
+								@foreach($current_group->current_homework as $homework)
+									<tr>
+										<td>{{$homework->id}}</td>
+										<td>{{$homework->due_date}}</td>
+										<td>{{$homework->task}}</td>
+									</tr>
+								@endforeach
 							</table>
 						</div>
 						<div class="tab-pane" id="classroom-tasks">
@@ -205,41 +177,13 @@
 									<th>Date</th>
 									<th>Task</th>
 								</tr>
-								<tr>
-									<td>1</td>
-									<td>20/01</td>
-									<td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</td>
-								</tr>
-								<tr>
-									<td>2</td>
-									<td>21/01</td>
-									<td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</td>
-								</tr>
-								<tr>
-									<td>3</td>
-									<td>22/01</td>
-									<td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</td>
-								</tr>
-								<tr>
-									<td>4</td>
-									<td>23/01</td>
-									<td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</td>
-								</tr>
-								<tr>
-									<td>5</td>
-									<td>24/01</td>
-									<td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</td>
-								</tr>
-								<tr>
-									<td>6</td>
-									<td>29/01</td>
-									<td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</td>
-								</tr>
-								<tr>
-									<td>7</td>
-									<td>02/02</td>
-									<td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</td>
-								</tr>
+								@foreach($current_group->current_group_tasks as $homework)
+									<tr>
+										<td>{{$homework->id}}</td>
+										<td>{{$homework->due_date}}</td>
+										<td>{{$homework->task}}</td>
+									</tr>
+								@endforeach
 							</table>
 						</div>
 						<div class="tab-pane" id="results-table">
@@ -259,6 +203,23 @@
 									<th>Exam</th>
 									<th>AVG</th>
 								</tr>
+								@foreach($current_group->students as $student)
+									<tr>
+										<td>#{{$student->id }} {{$student->name}}</td>
+										<td>70</td>
+										<td>75</td>
+										<td>35</td>
+										<td>15</td>
+										<td>15</td>
+										<td>80</td>
+										<td>80</td>
+										<td>80</td>
+										<td>80</td>
+										<td>80</td>
+										<td>80</td>
+										<td>73.8</td>
+									</tr>
+								@endforeach
 								<tr>
 									<td>Eddie Murphy</td>
 									<td>70</td>

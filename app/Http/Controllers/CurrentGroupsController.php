@@ -55,7 +55,7 @@ class CurrentGroupsController extends Controller
      */
     public function show(CurrentGroups $current_group)
     {
-        return view('admin.current-groups.show', compact('current_group'));
+    	  return view('admin.current-groups.show', compact('current_group'));
     }
 
     /**

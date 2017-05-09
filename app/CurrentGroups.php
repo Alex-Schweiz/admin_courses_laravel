@@ -18,4 +18,14 @@ class CurrentGroups extends Model
 	{
 		return $this->hasMany(Students::class);
 	}
+
+	public function current_homework()
+	{
+		return $this->hasMany(CurrentHomework::class);
+	}
+
+	public function current_group_tasks()
+	{
+		return $this->hasMany(CurrentGroupTasks::class);
+	}
 }
